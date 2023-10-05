@@ -1,3 +1,7 @@
+main{
+    row-gap: 20vh;
+}
+
 .carousel{
     width: 100%;
 
@@ -8,3 +12,69 @@
     height: 60vh;
     object-fit: cover;
 }
+
+
+
+section#card {
+    display: flex;
+    justify-content: center;
+    column-gap: 4vh;
+}
+
+#card figure {
+    width: 300px;
+    height: 400px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#card figure::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+    z-index: 0;
+    border-radius: 10px;
+    transition: all 0.1s;
+}
+
+#card figure:hover::before {
+    background-color: rgba(0,0,0,0.1);
+}
+
+#card figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border: 2px solid var(--white-blue);
+    width: 80%;
+    height: 90%;
+    padding-left: 2vh;
+    color: var(--white-blue);
+    font-size: 22px;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+
+#card figure:nth-child(1){
+    background-image: url(../images/coffee.jpg);
+    background-size: cover;
+}
+#card figure:nth-child(2){
+    background-image: url(../images/Copy\ of\ _DSC3116.jpg);
+    background-size: cover;
+}
+#card figure:nth-child(3){
+    background-image: url(../images/coffeeocean1.jpg);
+    background-size: cover;
+}
+
