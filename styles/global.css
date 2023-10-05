@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Montserrat:wght@200;300;400;500;700&display=swap');
+*{margin: 0; padding: 0; list-style: none; text-decoration: none; font-family: 'Montserrat', sans-serif;}
+
+:root {
+    --dark-blue:#63888B;
+    --blue:#85ACAF;
+    --light-blue: #AEC7C4;
+    --white-blue:#F1EBE6;
+    --sand: #E5D3BC;
+    --yellow: #D9C5A0;
+}
+
+img {
+    width: 200px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--white-blue);
+}
+
+footer {
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+footer img {
+    width: 200px;
+    height: 200px;
+    object-fit:cover;
+}
+
+footer ul {
+    display: flex;
+    column-gap: 4vh;
+}
+
+footer ul:last-child{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+
+footer ul:last-child li{
+    margin-right: 2vh;
+}
+
+
+footer a, li {
+    color: var(--white-blue);
+}
+
+footer a h4{
+    border-bottom:2px solid transparent;
+}
+
+footer a:hover h4{
+    border-bottom:2px solid var(--yellow);
+    color: var(--yellow);
+}
+
+footer h4 {
+    font-size: 20px;
+}
+
+footer ul:nth-child(3){
+    font-size: 28px;
+    cursor: pointer;
+}
+
+footer ul:nth-child(3) i:hover{
+    color: var(--yellow);
+}
