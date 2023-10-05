@@ -19,12 +19,15 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100vh;
     background-color: var(--white-blue);
 }
 main {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
 header {
     display: flex;
     justify-content: space-around;
@@ -49,7 +52,14 @@ nav a {
 nav a:hover {
     color: var(--yellow);
     border-radius: 5px;
-    /* border-bottom: 2px solid var(--yellow); */
+    border-bottom: 2px solid var(--yellow);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
@@ -83,6 +93,7 @@ footer ul:last-child i{
 footer h4 {
     font-family: "Itim";
     font-size: 26px;
+    border-bottom:2px solid transparent;
 }
 
 footer a, li {
