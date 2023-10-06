@@ -1,5 +1,6 @@
 main{
     row-gap: 20vh;
+    padding-bottom: 20vh;
 }
 
 .carousel{
@@ -78,3 +79,45 @@ section#card {
     background-size: cover;
 }
 
+#about {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 8vh;
+}
+
+#about img {
+    width: 400px;
+}
+
+#about article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+}
+
+#about h2 {
+    font-weight: bold;
+    font-size: 34px;
+}
+
+#about p {
+    line-height: 1.5;
+}
+
+#about button {
+    width: 25%;
+    background-color: transparent;
+    border: 2px solid  var(--blue);
+    border-radius: 10px;
+    padding: 2vh 0;
+    color: var(--dark-blue);
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+#about button:hover {
+    background-color: var(--blue);
+    color: var(--white-blue);
+}
