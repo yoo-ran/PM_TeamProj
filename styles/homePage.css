@@ -5,16 +5,42 @@ main{
 
 .carousel{
     width: 100%;
-
 }
+
 
 .carousel-item img {
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     object-fit: cover;
+    object-position: 40% 60%;
 }
 
+.carousel-item p,h5 {
+    color: var(--white-blue);
+    width: 50%;
+    position: absolute;
+    text-align: left;
+}
 
+.carousel-item h5 {
+    font-size: 40px;
+    font-weight: bold;
+    bottom: 30%;
+    left: 5%;
+}
+
+.carousel-item p{
+    bottom: 8%;
+    left: 5%;
+}
+
+.carousel-caption { 
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
 section#card {
     display: flex;
@@ -80,38 +106,55 @@ section#card {
 }
 
 #about {
-    border: 1px solid red;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    column-gap: 8vh;
-}
-
-#about img {
-    width: 400px;
-}
-
-#about article {
     display: flex;
     flex-direction: column;
     row-gap: 2vh;
 }
 
-#about h2 {
-    font-weight: bold;
-    font-size: 34px;
+
+#about article {
+    display: flex;
+    justify-content: center;
+    column-gap: 2vh;
+}
+
+#about figure{
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#about img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
 }
 
 #about p {
-    line-height: 1.5;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
 }
 
+#about span {
+    font-size: 14px;
+}
+
+#about h2 {
+    font-weight: bold;
+    font-size: 34px;
+    text-align: center;
+}
+
+
 #about button {
-    width: 25%;
+    width: 100%;
     background-color: transparent;
     border: 2px solid  var(--blue);
     border-radius: 10px;
-    padding: 2vh 0;
+    padding: 1vh 0;
     color: var(--dark-blue);
     cursor: pointer;
     transition: all 0.1s;
@@ -120,4 +163,14 @@ section#card {
 #about button:hover {
     background-color: var(--blue);
     color: var(--white-blue);
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.features img {
+    width: 50%;
 }
