@@ -10,9 +10,6 @@
     --yellow: #D9C5A0;
 }
 
-img {
-    width: 200px;
-}
 
 body {
     display: flex;
@@ -33,6 +30,11 @@ header {
     justify-content: space-around;
     align-items: center;
     padding: 1vh 0;
+}
+
+
+header img {
+    width: 200px;
 }
 
 nav, nav ul{
@@ -116,6 +118,7 @@ footer figcaption {
 footer figcaption i{
     font-size: 28px;
     cursor: pointer;
+    color: var(--white-blue);
 }
 
 footer figcaption i:hover{
