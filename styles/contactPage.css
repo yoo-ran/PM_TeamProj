@@ -1,0 +1,136 @@
+
+main {
+    width: 90%;
+    padding: 10vh 0;
+    margin-bottom: 5vh;
+    row-gap: 10vh;
+    background-color: var(--blue);
+}
+h2 {
+    font-size: 40px;
+    color: var(--sand);
+    text-shadow: 1px 1px 2px var(--gray);
+    text-align: left;
+    width: 80%;
+}
+
+.map {
+    border: 3vh solid var(--sand);
+    width: 80%;
+    height: 50vh;
+    box-shadow: 2px 2px 3px var(--gray);
+}
+
+.contact {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+    color: var(--dark-blue);
+    width: 40%;
+}
+
+.contact li {
+    color: var(--gray);
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 4vh;
+    background-color: var(--sand);
+    padding: 2vh;
+}
+
+.info i {
+    color: var(--dark-blue);
+}
+
+dl {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+
+dt {
+    font-weight: bold;
+}
+
+.contact i {
+    font-size: 30px;
+}
+
+.sm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 5vh;
+}
+
+.sm ul {
+    background-color: var(--sand);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1vh;
+    width: 25vh;
+    height: 25vh;
+}
+
+.sm li {
+    color: var(--dark-blue);
+}
+
+.sm span{
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
+.link {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 35px;
+}
+
+form{
+    background-color: var(--sand);
+    width: 50%;
+    padding: 2vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2vh;
+}
+form h3 {
+    font-size: 28px;
+    color: var(--dark-blue);
+}
+input, textarea, button {
+    border: none;
+    padding: 2vh;
+    font-weight: bold;
+    width: 90%;
+
+}
+
+input::placeholder, textarea::placeholder{
+    color: var(--dark-blue);
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--dark-blue);
+    color: var(--white-blue);
+    width: 30%;
+}

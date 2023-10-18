@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: var(--white-blue);
 }
@@ -28,6 +29,7 @@ main {
 
 
 header {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -67,6 +69,7 @@ main {
 }
 
 footer {
+    width: 100%;
     padding-top: 3vh;
     background-color: var(--dark-blue);
     display: flex;
