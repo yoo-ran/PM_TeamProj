@@ -106,21 +106,19 @@ dt {
 form{
     background-color: var(--sand);
     width: 50%;
-    padding: 2vh;
+    padding: 3vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    row-gap: 2vh;
+    row-gap: 4vh;
 }
 form h3 {
-    font-size: 28px;
+    font-size: 30px;
     color: var(--dark-blue);
 }
 input, textarea, button {
     border: none;
     padding: 2vh;
     font-weight: bold;
-    width: 90%;
 
 }
 
@@ -133,4 +131,9 @@ button {
     background-color: var(--dark-blue);
     color: var(--white-blue);
     width: 30%;
+}
+
+form div {
+    display: flex;
+    justify-content: right;
 }
