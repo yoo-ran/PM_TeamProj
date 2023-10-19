@@ -30,13 +30,16 @@ aside li:nth-child(5){
     align-items: center;
 }
 .menu h2 {
-     text-align: left;
+    text-align: left;
     width: 80%;
+    color: var(--dark-blue);
 }
 .menu article {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: end;
+    row-gap: 4vh;
     width: 70%;
 }
 
@@ -45,14 +48,23 @@ aside li:nth-child(5){
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid red;
 }
 .menu figure {
     width: 30%;
+    cursor: pointer;
+    position: relative;
 }
+
+.menu figure:hover {
+    opacity: 0.9;
+}
+
 .menu figcaption {
     background-color: var(--white);
     padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
 }
 
 .menu img {
@@ -60,4 +72,35 @@ aside li:nth-child(5){
     height: 50%;
     object-fit: cover;
     object-position: center;
+}
+
+
+.menu span {
+    font-size: 14px;
+}
+
+.heart, .new, .hot {
+    position: absolute;
+    top: 1vh;
+    z-index: 2;
+}
+
+
+.heart {
+    color: var(--pink);
+    font-size: 22px;
+    right: 1vh;
+}
+
+.new {
+    font-size: 14px;
+    background-color: var(--blue);
+    padding: 1vh;
+    color: var(--white);
+}
+.hot {
+    font-size: 14px;
+    padding: 1vh;
+    color: var(--white);
+    background-color: var(--pink);
 }
