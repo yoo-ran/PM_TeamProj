@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/cartPage.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Coastal Cove Cafe</title>
 </head>
@@ -32,33 +33,73 @@
         <section class='cart'>
             <table>
                 <thead>
-                    <td>Item</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
                 </thead>
                 <tbody>
                     <tr>
                         <td><img src="./images/menu_almoncroiassant.jpg" alt=""></td>
                         <td>$4.50</td>
-                        <td><input type="number"></td>
+                        <td><input type="number" placeholder='1'></td>
                         <td>$4.50</td>
                     </tr>
                     <tr>
                         <td><img src="./images/menu_affogato.jpg" alt=""></td>
                         <td>$5.00</td>
-                        <td><input type="number"></td>
+                        <td><input type="number" placeholder='1'></td>
                         <td>$10.00</td>
                     </tr>
                     <tr>
                         <td><img src="./images/menu_brewcoffee.jpg" alt=""></td>
                         <td>$5.00</td>
-                        <td><input type="number"></td>
+                        <td><input type="number" placeholder='1'></td>
                         <td>$10.00</td>
                     </tr>
-                </tbody>
-                <tfoot></tfoot>
             </table>
+            <div class='recommended'>
+                <h2>Recommended Items</h2>
+                <article>
+                    <figure>
+                        <img src="./images/menu_blueberrymuffin.jpg" alt="">
+                        <figcaption>
+                            <p>$5.00</p>
+                            <button>Add To Cart</button>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./images/menu_frapuccino.jpg" alt="">
+                        <figcaption>
+                            <p>$5.00</p>
+                            <button>Add To Cart</button>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./images/menu_bluebottle.jpg" alt="">
+                        <figcaption>
+                            <p>$5.00</p>
+                            <button>Add To Cart</button>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./images/menu_brownie.jpg" alt="">
+                        <figcaption>
+                            <p>$5.00</p>
+                            <button>Add To Cart</button>
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
+            <article class='total'>
+                <ul>
+                    <li><h4>Subtotal:</h4><p>$20</p></li>
+                    <li><h4>Tax:</h4><p>$4.5</p></li>
+                    <li><h4>Promo Code:</h4><input type="text"></li>
+                    <li><h3>Total:</h3> <p>$24.5</p></li>
+                </ul>
+                <button>Proceed To Checkout</button>
+            </article>
         </section>
     </main>
     <footer>

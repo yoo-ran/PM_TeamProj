@@ -1,0 +1,159 @@
+
+html {
+    font-size: 10px;
+}
+main {
+    padding-bottom: 8em;
+    row-gap: 3em;
+}
+.banner {
+    width: 100vw;
+    height: 30vh;
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    color: var(--white-blue);
+    font-size: 5em;
+    font-weight: bold;
+    letter-spacing: 1vw;
+}
+
+.cart {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6em;
+    padding-bottom: 4em;
+}
+
+table {
+    width: 120em;
+}
+
+
+th {
+    font-size: 2em;
+    color: var(--yellow);
+    text-align: center;
+    padding: 2vh 0;
+}
+
+thead, tr {
+    border-bottom: 1px solid var(--gray);
+}
+
+td {
+    text-align: center;
+    font-size: 18px;
+    color: var(--dark-blue);
+    padding: 2em 0;
+}
+
+img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+}
+
+input {
+    padding: 0.2em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--dark-blue);
+    color: var(--dark-blue);
+    text-align: center;
+}
+
+.recommended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+    padding: 2vh 0;
+    width: 100%;
+}
+
+.recommended h2 {
+    font-size: 24px;
+    color: var(--yellow);
+    width: 80%;
+}
+
+.recommended article {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommended img {
+    width: 20em;
+    height: 20em;
+    object-fit: cover;
+}
+
+.recommended p {
+    color: var(--dark-blue);
+    font-size: 1.8em;
+}
+
+.recommended figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+    text-align: center;
+}
+
+
+.recommended button, .total button {
+    background-color: var(--yellow);
+    border: none;
+    padding: 1em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 80%;
+}
+
+.total ul {
+    width: 40%;
+}
+
+.total h3, .total h4, .total p  {
+    color: var(--dark-blue);
+}
+
+.total li:nth-child(3){
+    border-bottom: 1px solid var(--gray);
+}
+
+.total h4 {
+    font-size: 2em;
+}
+
+.total h3 {
+    font-size: 2.4em;
+    font-weight: bold;
+}
+
+.total p {
+    font-size: 2em;
+}
+
+.total li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+}
