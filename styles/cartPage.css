@@ -158,6 +158,14 @@ input {
     padding: 1em 0;
 }
 
+.bg {
+    width: 100%;
+    background-color: var(--gray);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+
+}
 
 .checkout{
     display: flex;
@@ -165,10 +173,12 @@ input {
     row-gap: 1vh;
     background-color: var(--white);
     padding: 2em;
-    width: 70%;
+    width: 80%;
 
     position: absolute;
     top: 20%;
+
+    display: none;
 }
 
 .checkout input{
