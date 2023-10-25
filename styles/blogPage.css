@@ -30,15 +30,19 @@ main {
 }
 
 .blog figure {
-    width: 25%;
     height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 2vh;
-    background-color: var(--white);
     padding: 2vh 0;
     cursor: pointer;
+}
+
+.blog a {
+    width: 25%;
+    background-color: var(--white);
+    text-decoration: none;
 }
 
 .blog figure:hover img {
@@ -62,12 +66,14 @@ main {
     background-color: var(--sand);
     color: var(--white);
     padding: 1vh;
-    text-shadow: 1px 1px 2px var(--gray);
+    text-shadow: 0.1em 0.1em 0.2em var(--gray);
+    font-size: 1.6em;
 }
 
 .blog p {
     font-size: 14px;
     line-height: 1.5;
+    color: var(--gray);
 }
 
 .blog span {

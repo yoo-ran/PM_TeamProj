@@ -1,3 +1,7 @@
+main {
+    row-gap: 4em;
+    padding-bottom: 8em;
+}
 
 aside {
     position: fixed;
@@ -6,6 +10,13 @@ aside {
 
 aside li {
     padding: 2vh;
+    font-size: 1.4em;
+    color: var(--white);
+    cursor: pointer;
+}
+
+aside li:hover {
+    opacity: 0.8;
 }
 
 aside li:nth-child(1){
@@ -28,11 +39,13 @@ aside li:nth-child(5){
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 5em;
 }
 .menu h2 {
     text-align: left;
     width: 80%;
     color: var(--dark-blue);
+    font-size: 2em;
 }
 .menu article {
     display: flex;
@@ -48,6 +61,7 @@ aside li:nth-child(5){
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    row-gap: 4em;
 }
 .menu figure {
     width: 30%;
@@ -69,14 +83,17 @@ aside li:nth-child(5){
 
 .menu img {
     width: 100%;
-    height: 50%;
+    height: 20em;
     object-fit: cover;
     object-position: center;
 }
 
+.menu p{
+    font-size: 1.6em;
+}
 
 .menu span {
-    font-size: 14px;
+    font-size: 1.4em;
 }
 
 .heart, .new, .hot {
