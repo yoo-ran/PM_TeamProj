@@ -59,6 +59,11 @@ dl {
 
 dt {
     font-weight: bold;
+    font-size: 1.6em;
+}
+
+dd {
+    font-size: 1.4em;
 }
 
 .contact i {
@@ -87,15 +92,13 @@ dt {
     color: var(--dark-blue);
 }
 
-.sm span{
-    display: block;
-    width: 100%;
-    font-size: 12px;
-    text-align: center;
+
+.text {
+    font-size: 1.4em;
 }
 
 .link {
-    font-size: 20px;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -118,7 +121,6 @@ form h3 {
 input, textarea, button {
     border: none;
     padding: 2vh;
-    font-weight: bold;
 
 }
 
