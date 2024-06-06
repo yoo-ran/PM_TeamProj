@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta>
     <link rel="icon" type="image/x-icon" href="/images/Logo-01.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -23,7 +22,7 @@
             </ul>
             <ul>
                 <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="./login.php"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +37,7 @@
               <div class="carousel-item active" data-bs-interval="10000">
                 <img src="./images/banner01.jpg"  alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Welcome to Coastal Cove Cafe!</h5>
+                  <h5 id="welcome-message">Welcome to Coastal Cove Cafe!</h5>
                   <p>We’re a local Vancouver cafe hoping to bring you all the fun beach vibes, while still serving up your cozy cafe favorites. 
 
                     We’ve been proudly serving you and our community since 2018 and look forward to many more years to come!
@@ -176,6 +175,19 @@
             <li><i class="fa-solid fa-location-dot"></i>555 Seymour St, CA</li>
         </ul>
     </footer>
-    <script></script>
+    <script>
+        // Function to check session storage and update welcome message
+        function updateWelcomeMessage() {
+            const welcomeMessageElement = document.getElementById('welcome-message');
+            const username = sessionStorage.getItem('username');
+            
+            if (username) {
+                welcomeMessageElement.textContent = `Welcome, ${username}!`;
+            }
+        }
+
+        // Call the function on page load
+        window.onload = updateWelcomeMessage;
+    </script>
 </body>
 </html>
