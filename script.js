@@ -11,18 +11,3 @@ const disappear = () => {
 }
 
 
-// Function to check session storage and update welcome message
-function updateWelcomeMessage() {
-    const welcomeMessageElement = document.getElementById('welcome-message');
-    const username = sessionStorage.getItem('username');
-
-    sessionStorage.setItem('username', 'TestUser');
-console.log(sessionStorage.getItem('username')); // Should output 'TestUser'
-    
-    if (username) {
-        welcomeMessageElement.textContent = `Welcome, ${username}!`;
-    }
-}
-
-// Call the function on page load
-window.onload = updateWelcomeMessage;
