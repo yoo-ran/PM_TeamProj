@@ -41,26 +41,78 @@ if(!isset($_SESSION['username'])){
 <html>
 <head>
     <title>Login</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
-    <link rel="stylesheet" href="css/styles.css" >
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/global.css" >
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-    <div class="container">
-        <form class="form-signin" method="POST">
-            <h2 class="form-signin-heading">Login</h2>
-            <div class="input-group">
-                <input type="text" name="username" class="form-control" placeholder="Username" required>
-            </div>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-info btn-block" type="submit">Login</button>
-            <a class="btn btn-lg btn-success btn-block" href="register.php">Register</a>
-        </form>
-    </div>
+<header>
+        <a href="./index.html"><img src="./images/Logo-01.png" alt="Header Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="./login.php"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="form-signin-heading">Sign In</h2>
+        <div class="container">
+            <form class="form-signin" method="POST">
+                <div class="input-group">
+                    <label for="username">User name: </label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <label for="inputPassword">Password: </label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                </div>
+                <button class="btn btn-lg btn-info btn-block" type="submit">Login</button>
+            </form>
+        </div>
+        <a class="register" href="register.php">No Account? Create One Here</a>
+    </main>
+    <footer>
+      <figure>
+        <!-- <img src="/images/Logo-01.png" alt="Footer Logo"> -->
+        <figcaption>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </figcaption>
+      </figure>
+        <ul>
+          <li><a href="#"><h4>About</h4></a></li>
+          <li>About</li>
+          <li>Contact Us</li>
+          <li>Catering Inquiry</li>
+          <li>FAQ’s</li>
+          <li>Terms and Policy</li>
+        </ul>
+        <ul>
+          <li><a href="#"><h4>Shop</h4></a></li>
+          <li>Coffee</li>
+          <li>Gift Cards</li>
+        </ul>
+        <ul>
+          <li><a href="#"><h4>Coffee</h4></a></li>
+          <li>Blog Posts</li>
+          <li>Transparency Reports</li>
+          <li>Sourcing Philosophy</li>
+          <li>Wholesale</li>
+        </ul>
+        <ul>
+            <li><h4>Contact</h4></li>
+            <li><i class="fa-solid fa-phone"></i>123.444.555</li>
+            <li><i class="fa-regular fa-envelope"></i>coastalcove@mail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i>555 Seymour St, CA</li>
+        </ul>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,65 @@
+body {
+    background-color: var(--white);
+    height: 100vh;
+    width: 100vw;
+}
+.form-signin-heading{
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+main{
+    row-gap: 4rem;
+}
+
+.container {
+    width: 60rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-blue);
+}
+
+form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+label {
+    color: var(--brown);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.input-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form-control {
+    width: 70%;
+    padding: 0.5rem;
+    border: none;
+}
+
+.btn {
+    width: 50%;
+    border: none;
+    padding: 0.5rem 0;
+    background-color: var(--yellow);
+    color: var(--brown);
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.register{
+    color: var(--brown);
+    text-decoration: none;
+}
