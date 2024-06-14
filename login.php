@@ -3,23 +3,32 @@ session_start();
 require('db.php');
 
 // Checks if the form is submitted
-if(isset($_POST['username']) && isset($_POST['password'])){
+if (isset($_POST['username']) && isset($_POST['password'])) {
     // Assigning posted values to variables.
     $username = $_POST['username'];
     $password = $_POST['password'];
     
     // Checking the values are existing in the database or not
-    $query = "SELECT * FROM `users` WHERE username='$username' and password='$password'";
+    $query = "SELECT * FROM `users` WHERE username='$username' AND password='$password'";
     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
     $count = mysqli_num_rows($result);
 
     // If the posted values are equal to the database values, then session will be created for the user.
-    if($count == 1){
+    if ($count == 1) {
         $user = mysqli_fetch_assoc($result);  // Fetch the user data
-        
+
+        // Check if the user has reward points, if not, initialize them with 200 points
+        if ($user['reward_points'] === null) {
+            $initial_points = 200;
+            $update_query = "UPDATE `users` SET reward_points='$initial_points' WHERE id='{$user['id']}'";
+            mysqli_query($connection, $update_query) or die(mysqli_error($connection));
+            $user['reward_points'] = $initial_points;
+        }
+
         $_SESSION['username'] = $user['username'];
         $_SESSION['user_id'] = $user['id'];
-        
+        $_SESSION['reward_points'] = $user['reward_points'];  // Store reward points in session
+
         // Set session storage using JavaScript
         echo "<script>
                 sessionStorage.setItem('username', '{$user['username']}');
@@ -32,7 +41,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 }
 
 // Display login form if session is not set
-if(!isset($_SESSION['username'])){
+if (!isset($_SESSION['username'])) {
     echo "You are not our member";
 }
 ?>
@@ -41,10 +50,9 @@ if(!isset($_SESSION['username'])){
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="styles/global.css" >
+    <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 <body>
 <header>
