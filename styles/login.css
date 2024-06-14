@@ -57,6 +57,11 @@ label {
     color: var(--brown);
     font-weight: bold;
     margin-top: 2rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--sand);
 }
 
 .register{

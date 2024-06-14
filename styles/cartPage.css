@@ -112,7 +112,7 @@ input {
 }
 
 
-.recommended button, .total button {
+.recommended button, .total >button {
     background-color: var(--yellow);
     border: none;
     padding: 1em;
@@ -158,11 +158,11 @@ input {
     padding: 1em 0;
 }
 
-.total button {
+.total >button {
     border: 2px solid var(--dark-blue);
 }
 
-.total button:hover {
+.total >button:hover {
     background-color: transparent;
     border: 2px solid var(--dark-blue);
 }
@@ -173,7 +173,6 @@ input {
     opacity: 0.5;
     position: absolute;
     top: 0;
-
 }
 
 .checkout{
@@ -190,24 +189,46 @@ input {
     display: none;
 }
 
-.checkout input{
-    border: 0.2em solid var(--dark-blue);
+.checkout section {
+    display: flex;
 }
+
 
 .left {
     display: flex;
     flex-direction: column;
     row-gap: 2em;
     width: 50%;
+    background-color: var(--sand);
+    padding: 1rem;
 }
+.right{
+    width: 45%;
+    display: flex;
+    background-color: var(--sand);
+    padding: 1rem;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    row-gap: 2em;
+}
+
+.total >div{
+    width: 100%;
+}
+
 .checkout h2 {
     font-size: 40px;
-    color: var(--yellow);
+    color: var(--brown);
     font-weight: bold;
 }
 
 .checkout h3{
-    color: var(--yellow);
+    color: var(--brown);
     font-weight: bold;
 }
 
@@ -217,133 +238,68 @@ input {
     column-gap: 1em;
 }
 
-.account{
-    background-color: var(--white-blue) ;
+
+#itemContainer{
     display: flex;
     flex-direction: column;
-    row-gap: 1.2em;
-    padding: 2em;
+    justify-content: center;
+    align-items: center;
 }
-
-.account button, .signup button{
-    width: 30%;
-    background-color: var(--sand);
-    border: 2px solid var(--dark-blue);
-    font-size: 1.4em;
-    color: var(--dark-blue);
-    padding: 0.6em;
-}
-
-.checkout label {
-    color: var(--yellow);
-    font-size: 1.4em;
-}
-.or {
+#item{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+#descrp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--brown);
+    width: 80%;
+    font-size: 1.5rem;
+}
+
+#nameBox{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#tipBtnBox{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 1.3em;
-}
-.checkout span{
-    width: 40%;
-    height: 0.1em;
-    background-color: var(--gray);
-}
-
-.guest{
-    background-color: var(--white-blue) ;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2em;
-    padding: 2em;
-}  
-
-.guest li{
-    color: var(--yellow);
-    font-size: 1.2em;
-}
-
-.signup {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    row-gap: 1em;
-}
-.signup button{
-    width: 50%;
-}
-
-
-.payment{
-    background-color: var(--white-blue) ;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    row-gap: 1em;
-    padding: 2em;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    row-gap: 1em;
-}
-
-.payment ul {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
     width: 100%;
+
 }
 
-.payment li {
-    color: var(--dark-blue);
+.tipBtn{
+    background-color: var(--white);
+    width: 25%;
+    padding: 1rem 0;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--brown);
+}
+
+#totalBox > div{
     display: flex;
-    justify-content: center;
-    column-gap: 5em;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--brown);
+
 }
 
-.payment h3{
-    color: var(--yellow);
-}
-
-.payment li p {
-    font-size: 1.2em;
-}
-
-.point {
-    color: var(--dark-blue);
-    font-size: 1.5em;
-}
-
-ol {
-    display: flex;
-    justify-content: center;
-    column-gap: 1em;
-    width: 100%;
-}
-
-ol li{
-    width: 20%;
-}
-
-ol button, .payment button{
-    width: 100%;
-    padding: 1em 0em;
-    background-color: var(--sand);
-    border: 2px solid var(--dark-blue);
-    color: var(--dark-blue);
-    font-size: 1.4em;
-}
-
-.payment h5 {
-    color: var(--dark-blue);
-    font-size: 2em;
+#totalBox p,
+#totalBox span{
+    font-size: 1.5rem;
+    color: var(--brown);
     font-weight: bold;
 }
 
-.payment ul p {
-    font-size: 1.6em;
+#totalBox div:last-child p,
+#totalBox div:last-child span {
+    font-size: 2rem;
 }
