@@ -18,20 +18,21 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $user = mysqli_fetch_assoc($result);  // Fetch the user data
 
         // Check if the user has reward points, if not, initialize them with 200 points
-        if ($user['reward_points'] === null) {
+        if ($user['reward'] == 0) {
             $initial_points = 200;
-            $update_query = "UPDATE `users` SET reward_points='$initial_points' WHERE id='{$user['id']}'";
+            $update_query = "UPDATE `users` SET reward='$initial_points' WHERE id='{$user['id']}'";
             mysqli_query($connection, $update_query) or die(mysqli_error($connection));
-            $user['reward_points'] = $initial_points;
+            $user['reward'] = $initial_points;
         }
 
         $_SESSION['username'] = $user['username'];
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['reward_points'] = $user['reward_points'];  // Store reward points in session
+        $_SESSION['reward'] = $user['reward'];  // Store reward points in session
 
         // Set session storage using JavaScript
         echo "<script>
                 sessionStorage.setItem('username', '{$user['username']}');
+                sessionStorage.setItem('reward', '{$user['reward']}');
                 window.location.href = 'index.html';
               </script>";
     } else {

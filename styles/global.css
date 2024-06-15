@@ -66,6 +66,32 @@ nav a:hover {
     border-bottom: 0.2em solid var(--yellow);
 }
 
+.fa-cart-shopping {
+    position: relative;
+}
+
+.fa-cart-shopping[data-count]:after {
+    content: attr(data-count);
+    position: absolute;
+    top: -20px;  /* Adjust as needed */
+    right: -20px; /* Adjust as needed */
+    background: var(--dark-blue);
+    color: white;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white; /* Optional: to add a white border around the badge */
+}
+
+
+
 main {
     flex: 1;
     display: flex;
