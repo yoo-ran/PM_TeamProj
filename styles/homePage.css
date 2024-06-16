@@ -105,6 +105,10 @@ section#card {
     background-size: cover;
 }
 
+p {
+    font-size: 2em;
+}
+
 #about {
     width: 100%;
     display: flex;

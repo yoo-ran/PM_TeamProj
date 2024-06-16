@@ -40,24 +40,8 @@
                     <th>Total</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img src="./images/menu_almoncroiassant.jpg" alt=""></td>
-                        <td>$4.50</td>
-                        <td><input type="number" placeholder='1'></td>
-                        <td>$4.50</td>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/menu_affogato.jpg" alt=""></td>
-                        <td>$5.00</td>
-                        <td><input type="number" placeholder='1'></td>
-                        <td>$10.00</td>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/menu_brewcoffee.jpg" alt=""></td>
-                        <td>$5.00</td>
-                        <td><input type="number" placeholder='1'></td>
-                        <td>$10.00</td>
-                    </tr>
+                    <!-- Cart items will be dynamically inserted here -->
+                </tbody>
             </table>
             <div class='recommended'>
                 <h2>Recommended Items</h2>
@@ -94,11 +78,18 @@
             </div>
             <article class='total'>
                 <ul>
-                    <li><h4>Subtotal:</h4><p>$20</p></li>
-                    <li><h4>Tax:</h4><p>$4.5</p></li>
-                    <li><h4>Promo Code:</h4><input type="text"></li>
-                    <li><h3>Total:</h3> <p>$24.5</p></li>
+                    <li><h4>Subtotal:</h4><p class="subtotal">$20</p></li>
+                    <li><h4>Tax:</h4><p class="tax">$4.5</p></li>
+                    <li><h4>Discount:</h4><p class="discount">-$0.00</p></li>
+                    <li><h3>Total:</h3> <p class="total">$24.5</p></li>
                 </ul>
+                <div id="redeemContainer">
+                    <button id='redeemBtn' onclick='redeemPoints()'>
+                        Redeem With Points
+                        <span class="close-btn" onclick="cancelRedeem(event)">&times;</span>
+                    </button>
+                </div>
+                <p>Your Account: <span id='points'>200</span> Points</p>
                 <button id='checkBtn' onclick='checkout()'>Proceed To Checkout</button>
             </article>
         </section>
@@ -152,8 +143,6 @@
                         </div>
                     </article>
                 </div>
-
-
         </div>
     </main>
     <footer>

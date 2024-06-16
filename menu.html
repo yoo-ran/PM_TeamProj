@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/menuPage.css">
+    <script type='text/javascript' src='./script.js'></script>
     <title>Coastal Cove Cafe</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
             <ul>
-                <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping" data-count="0"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </nav>
@@ -34,309 +35,239 @@
                 <li>Merchandise</li>
             </ul>
         </aside>
-        <section class='menu'>
-            <article>
-                <h2>Hot Beverage</h2>
-                <div>
-                    <figure>
-                        <i class="fa-solid fa-heart heart"></i>
-                        <img src="./images/menu_caramelmacciato.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Caramel Macchiato
-                            </p>
-                            <span>
-                                $5.00
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <strong class='new'>New</strong>
-                        <img src="./images/hotchocolate.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Hot Chocolate
-                            </p>
-                            <span>
-                                $4.50
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <strong class='hot'>Hot</strong>
-                        <img src="./images/menu_latte.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Latte
-                            </p>
-                            <span>
-                                $5.00
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_roselatte.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Rose Latte
-                            </p>
-                            <span>
-                                $5.00
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_brewcoffee.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Brew Coffee
-                            </p>
-                            <span>
-                                $4.50
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <i class="fa-solid fa-heart heart"></i>
-                        <img src="./images/menu_espresso.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Espresso Shot
-                            </p>
-                            <span>
-                                $3.75
-                            </span>
-                        </figcaption>
-                    </figure>
-                </div>
-            </article>
-            <article>
-                <h2>Cold Beverage</h2>
-                <div>
-                    <figure>
-                        <img src="./images/menu_icecaramel.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Caramel Macchiato
-                            </p>
-                            <span>
-                                $5.00
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <strong class='hot'>Hot</strong>
-                        <img src="./images/menu_dalgona.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Hot Chocolate
-                            </p>
-                            <span>
-                                $6.25
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_icedlatte.jpg" alt="">
-                        <figcaption>
-                            <p>
-                               Iced Latte
-                            </p>
-                            <span>
-                                $4.75
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <strong class='new'>New</strong>
-                        <img src="./images/menu_frapuccino.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Mocha Frappuccino
-                            </p>
-                            <span>
-                                $6.25
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <i class="fa-solid fa-heart heart"></i>
-                        <img src="./images/menu_espressomartini.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Espresso Martini
-                            </p>
-                            <span>
-                                $11
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_affogato.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Affogato
-                            </p>
-                            <span>
-                                $9.50
-                            </span>
-                        </figcaption>
-                    </figure>
-                </div>
-            </article>
-            <article>
-                <h2>Food</h2>
-                <div>
-                    <figure>
-                        <strong class='new'>New</strong>
-                        <img src="./images/menu_buttercroiassant.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Butter Croissant
-                            </p>
-                            <span>
-                                $4.25
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_almoncroiassant.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Almond Croissant
-                            </p>
-                            <span>
-                                $4.75
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_painau.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Pain au Chocolat
-                            </p>
-                            <span>
-                                $4.75
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <i class="fa-solid fa-heart heart"></i>
-                        <img src="./images/menu_blueberrymuffin.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Blueberry Muffin
-                            </p>
-                            <span>
-                                $3.50
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <strong class='hot'>Hot</strong>
-                        <img src="./images/menu_brownie.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Chocolate Brownie Squares
-                            </p>
-                            <span>
-                                $3.50
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_matchabrownie.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Matcha Brownie Squares
-                            </p>
-                            <span>
-                                $3.50
-                            </span>
-                        </figcaption>
-                    </figure>
-                </div>
-            </article>
-            <article>
-                <h2>At Home</h2>
-                <div>
-                    <figure>
-                        <strong class='hot'>Hot</strong>
-                        <img src="./images/menu_littlenap.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Little Nap Coffee Beans - Brazil Roast
-                            </p>
-                            <span>
-                                $16
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <i class="fa-solid fa-heart heart"></i>
-                        <img src="./images/menu_bluebottle.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Blue Bottle Coffee Beans
-                            </p>
-                            <span>
-                                $18
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <strong class='new'>New</strong>
-                        <img src="./images/menu_onyx.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                Onyx Coffee Beans
-                            </p>
-                            <span>
-                                $18
-                            </span>
-                        </figcaption>
-                    </figure>
-                </div>
-            </article>
-            <article>
-                <h2>Merchandise</h2>
-                <div>
-                    <figure>
-                        <img src="./images/menu_mug.jpg" alt="">
-                        <figcaption>
-                            <p>
-                                “Life Begins After Coffee” Mug
-                            </p>
-                            <span>
-                                $15
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/menu_tumblur.jpeg" alt="">
-                        <figcaption>
-                            <p>
-                                24oz Stainless Steel Tumbler
-                            </p>
-                            <span>
-                                $24
-                            </span>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="./images/mennu_press.jpeg" alt="">
-                        <figcaption>
-                            <p>
-                                Bodum French Press
-                            </p>
-                            <span>
-                                $35
-                            </span>
-                        </figcaption>
-                    </figure>
-                </div>
-            </article>
+        <section class="menu">
+            <form id="menuForm" method="post" action="checkout.php">
+                <article>
+                    <h2>Hot Beverage</h2>
+                    <div>
+                        <figure onclick="addToCart(1, 'M')" data-item-id="1">
+                            <i class="fa-solid fa-heart heart"></i>
+                            <img src="./images/menu_caramelmacciato.jpg" alt="">
+                            <figcaption>
+                                <p>Caramel Macchiato</p>
+                                <span>$5.00</span>
+                                <input type="hidden" name="items[]" value="1">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(2, 'M')" data-item-id="2">
+                            <strong class='new'>New</strong>
+                            <img src="./images/hotchocolate.jpg" alt="">
+                            <figcaption>
+                                <p>Hot Chocolate</p>
+                                <span>$4.50</span>
+                                <input type="hidden" name="items[]" value="2">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(3, 'M')" data-item-id="3">
+                            <strong class='hot'>Hot</strong>
+                            <img src="./images/menu_latte.jpg" alt="">
+                            <figcaption>
+                                <p>Latte</p>
+                                <span>$5.00</span>
+                                <input type="hidden" name="items[]" value="3">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(4, 'M')" data-item-id="4">
+                            <img src="./images/menu_roselatte.jpg" alt="">
+                            <figcaption>
+                                <p>Rose Latte</p>
+                                <span>$5.00</span>
+                                <input type="hidden" name="items[]" value="4">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(5, 'M')" data-item-id="5">
+                            <img src="./images/menu_brewcoffee.jpg" alt="">
+                            <figcaption>
+                                <p>Brew Coffee</p>
+                                <span>$4.50</span>
+                                <input type="hidden" name="items[]" value="5">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(6, 'M')" data-item-id="6">
+                            <i class="fa-solid fa-heart heart"></i>
+                            <img src="./images/menu_espresso.jpg" alt="">
+                            <figcaption>
+                                <p>Espresso Shot</p>
+                                <span>$3.75</span>
+                                <input type="hidden" name="items[]" value="6">
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article>
+                    <h2>Cold Beverage</h2>
+                    <div>
+                        <figure onclick="addToCart(7, 'M')" data-item-id="7">
+                            <img src="./images/menu_icecaramel.jpg" alt="">
+                            <figcaption>
+                                <p>Caramel Macchiato</p>
+                                <span>$5.00</span>
+                                <input type="hidden" name="items[]" value="7">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(8, 'M')" data-item-id="8">
+                            <strong class='hot'>Hot</strong>
+                            <img src="./images/menu_dalgona.jpg" alt="">
+                            <figcaption>
+                                <p>Hot Chocolate</p>
+                                <span>$6.25</span>
+                                <input type="hidden" name="items[]" value="8">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(9, 'M')" data-item-id="9">
+                            <img src="./images/menu_icedlatte.jpg" alt="">
+                            <figcaption>
+                                <p>Iced Latte</p>
+                                <span>$4.75</span>
+                                <input type="hidden" name="items[]" value="9">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(10, 'M')" data-item-id="10">
+                            <strong class='new'>New</strong>
+                            <img src="./images/menu_frapuccino.jpg" alt="">
+                            <figcaption>
+                                <p>Mocha Frappuccino</p>
+                                <span>$6.25</span>
+                                <input type="hidden" name="items[]" value="10">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(11, 'M')" data-item-id="11">
+                            <i class="fa-solid fa-heart heart"></i>
+                            <img src="./images/menu_espressomartini.jpg" alt="">
+                            <figcaption>
+                                <p>Espresso Martini</p>
+                                <span>$11.00</span>
+                                <input type="hidden" name="items[]" value="11">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(12, 'M')" data-item-id="12">
+                            <img src="./images/menu_affogato.jpg" alt="">
+                            <figcaption>
+                                <p>Affogato</p>
+                                <span>$9.50</span>
+                                <input type="hidden" name="items[]" value="12">
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article>
+                    <h2>Food</h2>
+                    <div>
+                        <figure onclick="addToCart(13, 'M')" data-item-id="13">
+                            <strong class='new'>New</strong>
+                            <img src="./images/menu_buttercroiassant.jpg" alt="">
+                            <figcaption>
+                                <p>Butter Croissant</p>
+                                <span>$4.25</span>
+                                <input type="hidden" name="items[]" value="13">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(14, 'M')" data-item-id="14">
+                            <img src="./images/menu_almoncroiassant.jpg" alt="">
+                            <figcaption>
+                                <p>Almond Croissant</p>
+                                <span>$4.75</span>
+                                <input type="hidden" name="items[]" value="14">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(15, 'M')" data-item-id="15">
+                            <img src="./images/menu_painau.jpg" alt="">
+                            <figcaption>
+                                <p>Pain au Chocolat</p>
+                                <span>$4.75</span>
+                                <input type="hidden" name="items[]" value="15">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(16, 'M')" data-item-id="16">
+                            <i class="fa-solid fa-heart heart"></i>
+                            <img src="./images/menu_blueberrymuffin.jpg" alt="">
+                            <figcaption>
+                                <p>Blueberry Muffin</p>
+                                <span>$3.50</span>
+                                <input type="hidden" name="items[]" value="16">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(17, 'M')" data-item-id="17">
+                            <strong class='hot'>Hot</strong>
+                            <img src="./images/menu_brownie.jpg" alt="">
+                            <figcaption>
+                                <p>Chocolate Brownie Squares</p>
+                                <span>$3.50</span>
+                                <input type="hidden" name="items[]" value="17">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(18, 'M')" data-item-id="18">
+                            <img src="./images/menu_matchabrownie.jpg" alt="">
+                            <figcaption>
+                                <p>Matcha Brownie Squares</p>
+                                <span>$3.50</span>
+                                <input type="hidden" name="items[]" value="18">
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article>
+                    <h2>At Home</h2>
+                    <div>
+                        <figure onclick="addToCart(19, 'M')" data-item-id="19">
+                            <strong class='hot'>Hot</strong>
+                            <img src="./images/menu_littlenap.jpg" alt="">
+                            <figcaption>
+                                <p>Little Nap Coffee Beans - Brazil Roast</p>
+                                <span>$16.00</span>
+                                <input type="hidden" name="items[]" value="19">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(20, 'M')" data-item-id="20">
+                            <i class="fa-solid fa-heart heart"></i>
+                            <img src="./images/menu_bluebottle.jpg" alt="">
+                            <figcaption>
+                                <p>Blue Bottle Coffee Beans</p>
+                                <span>$18.00</span>
+                                <input type="hidden" name="items[]" value="20">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(21, 'M')" data-item-id="21">
+                            <strong class='new'>New</strong>
+                            <img src="./images/menu_onyx.jpg" alt="">
+                            <figcaption>
+                                <p>Onyx Coffee Beans</p>
+                                <span>$18.00</span>
+                                <input type="hidden" name="items[]" value="21">
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article>
+                    <h2>Merchandise</h2>
+                    <div>
+                        <figure onclick="addToCart(22, 'M')" data-item-id="22">
+                            <img src="./images/menu_mug.jpg" alt="">
+                            <figcaption>
+                                <p>“Life Begins After Coffee” Mug</p>
+                                <span>$15.00</span>
+                                <input type="hidden" name="items[]" value="22">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(23, 'M')" data-item-id="23">
+                            <img src="./images/menu_tumblur.jpeg" alt="">
+                            <figcaption>
+                                <p>24oz Stainless Steel Tumbler</p>
+                                <span>$24.00</span>
+                                <input type="hidden" name="items[]" value="23">
+                            </figcaption>
+                        </figure>
+                        <figure onclick="addToCart(24, 'M')" data-item-id="24">
+                            <img src="./images/mennu_press.jpeg" alt="">
+                            <figcaption>
+                                <p>Bodum French Press</p>
+                                <span>$35.00</span>
+                                <input type="hidden" name="items[]" value="24">
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </form>
         </section>
     </main>
     <footer>
