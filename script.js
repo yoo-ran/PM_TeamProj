@@ -1,7 +1,59 @@
+
+
 const checkout = () => {
     document.querySelector(".checkout").style.display = "block";
     window.scrollTo(0, 0);
     document.querySelector(".bg").style.height = `${document.documentElement.scrollHeight}px`;
+
+   
+
+    const cartLocal = localStorage.getItem('cart');
+    if (cartLocal) {
+        const menuItems = JSON.parse(cartLocal);
+
+        // Get the container where we will display the data
+        const dataContainer = document.getElementById('itemContainer');
+
+        // Clear the container (optional, in case of refresh or existing data)
+        dataContainer.innerHTML = '';
+
+        const totalCheckout = document.querySelectorAll(".totalCheckout")
+        const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
+        const totalLocalVal = Object.values(totalLocal)
+        for (let i = 0; i < totalLocalVal.length; i++) {
+            totalCheckout[i].innerHTML = `$${totalLocalVal[i].toFixed(2)}`
+            
+        }
+
+        // Loop through the menu items and create HTML elements
+        menuItems.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item';
+            itemDiv.innerHTML = `<img id='itemImg' src="${item.img}" alt="">
+            <div id="descrp">
+                <div>
+                    <div id="nameBox">
+                        <p id='itemName'>${item.name}</p>
+                        <span id='itemPrice'>$${item.price}</span>
+                    </div>
+                    <div>
+                        <p id='itemSize'>Size: ${item.size}</p>
+                        <p id='itemSize'>Quantity: ${item.quantity}</p>
+                    </div>
+                </div>
+                <div>
+                    <p>*redeem</p>
+                </div>
+            </div>`;
+            dataContainer.appendChild(itemDiv);
+        });
+
+        
+    } else {
+        // Handle the case where there is no data in localStorage
+        dataContainer.innerHTML = '<p>No data available.</p>';
+    }
+
 }
 
 const disappear = () => {
@@ -40,6 +92,13 @@ function updateCartBadge() {
     }
 }
 
+let totalObj = {
+    subtotal:0,
+    tax:0,
+    discount:0,
+    total:0
+}
+
 // Function to load cart items
 function loadCartItems() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -63,9 +122,11 @@ function loadCartItems() {
         let subtotal = 0;
         let hasNonMerch = false;
 
+        console.log(data);
+        localStorage.setItem("cart", JSON.stringify(data))
         data.forEach(item => {
             let itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
+            totalObj.subtotal += itemTotal;
 
             if (!item.is_merch) {
                 hasNonMerch = true;
@@ -105,12 +166,14 @@ function loadCartItems() {
             cartTable.insertAdjacentHTML('beforeend', itemRow);
         });
 
-        let tax = subtotal * 0.1; // Assume 10% tax rate
-        let total = subtotal + tax;
+        totalObj.tax = totalObj.subtotal * 0.1; // Assume 10% tax rate
+        totalObj.total = totalObj.subtotal + totalObj.tax;
 
-        document.querySelector('.total .subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        document.querySelector('.total .tax').textContent = `$${tax.toFixed(2)}`;
-        document.querySelector('.total .total').textContent = `$${total.toFixed(2)}`;
+        document.querySelector('.total .subtotal').textContent = `$${totalObj.subtotal.toFixed(2)}`;
+        document.querySelector('.total .tax').textContent = `$${totalObj.tax.toFixed(2)}`;
+        document.querySelector('.total .total').textContent = `$${totalObj.total.toFixed(2)}`;
+
+        localStorage.setItem("totalLocal", JSON.stringify(totalObj))
 
         // Disable redeem button if only merch items are in the cart
         const redeemBtn = document.getElementById('redeemBtn');
@@ -178,6 +241,7 @@ function updateItemSize(itemId, size) {
     localStorage.setItem('cart', JSON.stringify(cart));
     loadCartItems(); // Reload items to reflect changes
 }
+
 
 // Function to redeem points
 function redeemPoints() {
