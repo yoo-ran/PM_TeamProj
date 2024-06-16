@@ -22,7 +22,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         
         // Set session storage using JavaScript
         echo "<script>
-                sessionStorage.setItem('username', '{$user['username']}');
+                sessionStorage.setItem('user', '{$user}');
                 window.location.href = 'index.html';
               </script>";
     } else {
