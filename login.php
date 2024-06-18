@@ -45,7 +45,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 // Display login form if session is not set
 if (!isset($_SESSION['username'])) {
-    echo "You are not our member";
+    // echo "You are not our member";
 }
 ?>
 
@@ -135,8 +135,9 @@ if (!isset($_SESSION['username'])) {
             sessionStorage.removeItem('reward');
             localStorage.removeItem("cart")
             localStorage.removeItem("totalLocal")
-
+            
             window.location.href = 'login.php';
+            session_destroy()
         }
 
         window.addEventListener("load", (event) => {
@@ -144,6 +145,7 @@ if (!isset($_SESSION['username'])) {
             let totalSession = sessionStorage.getItem("user")
             const mainContainer = document.querySelector("main")
             userSession = JSON.parse(userSession)
+
             if(userSession!=null){
                 mainContainer.innerHTML = `<main>
             <h2 class="form-signin-heading">Welcome, ${userSession.username}</h2>

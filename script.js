@@ -314,6 +314,7 @@ menuButton.addEventListener('click', () => {
 
 const confirmModal = document.querySelector("#confirmModal")
 let isOpen = confirmModal.dataset.open
+
 const modalOpen = () => {
 console.log(Boolean(isOpen));
   if(Boolean(isOpen)){
@@ -331,12 +332,33 @@ const modalClose = (btn) => {
     confirmModal.classList.add("hidden")
 
     if(btn=="accept"){
-        const userSession = JSON.parse(sessionStorage.getItem("user"))
-        const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
+   
 
-        userSession.reward = totalLocal.points
-        sessionStorage.setItem("user", JSON.stringify(userSession))
-        localStorage.removeItem("cart")
-        updateCartBadge();
+                // Convert userData object to JSON string
+        const userDataJSON = sessionStorage.getItem("user")
+        console.log(userDataJSON);
+        // Send data to PHP script via POST request
+        fetch('update.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: userDataJSON
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('Success:', result);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        // const userSession = JSON.parse(sessionStorage.getItem("user"))
+        // const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
+
+        // userSession.reward = totalLocal.points
+        // sessionStorage.setItem("user", JSON.stringify(userSession))
+        // localStorage.removeItem("cart")
+        // updateCartBadge();
     }
 }

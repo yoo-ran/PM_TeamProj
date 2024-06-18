@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,11 +136,11 @@
                   </div>
                   <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                       <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                          <a href='./index.html'
+                          <button 
                               onclick='modalClose("accept")'
                               class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                               Accept
-                          </a>
+                            </button>
                       </span>
                       <span class="mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto">
                           <button type="button"
@@ -191,5 +192,7 @@
       </footer>
 
       <script src='./script.js'></script>
+
+      
 </body>
 </html>
