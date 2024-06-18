@@ -353,12 +353,12 @@ const modalClose = (btn) => {
             console.error('Error:', error);
         });
 
-        // const userSession = JSON.parse(sessionStorage.getItem("user"))
-        // const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
+        const userSession = JSON.parse(sessionStorage.getItem("user"))
+        const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
 
-        // userSession.reward = totalLocal.points
-        // sessionStorage.setItem("user", JSON.stringify(userSession))
-        // localStorage.removeItem("cart")
-        // updateCartBadge();
+        userSession.reward = totalLocal.points
+        sessionStorage.setItem("user", JSON.stringify(userSession))
+        localStorage.removeItem("cart")
+        updateCartBadge();
     }
 }
