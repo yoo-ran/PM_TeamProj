@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/cartPage.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkBlue:"#63888B",
+            blue:"#85ACAF",
+            lightBlue: "#AEC7C4",
+            whiteBlue:"#F1EBE6",
+            sand: "#E5D3BC",
+            yellow: "#D9C5A0",
+            white:"#f5f5f5",
+            gray:"#999",
+            pink:"#db5252",
+            brown: "#886E3D",
+          }
+        }
+      }
+    }
+  </script>
     <title>Coastal Cove Cafe</title>
 </head>
 <body>
@@ -22,7 +43,7 @@
             </ul>
             <ul>
                 <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="./login.php"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -94,7 +115,7 @@
         </section>
 
         <div class='bg' onclick='disappear()'></div>
-        <div class='checkout'>
+        <div class='checkout hidden'>
             <h2>Checkout</h2>
             <section>
                 <div class='left'>
@@ -105,7 +126,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="right">
+                <div class="right flex flex-col justify-between items-end gap-y-10 p-6">
                     <article class='total'>
                         <div>
                             <h3>Leave us a tip!</h3>
@@ -117,14 +138,19 @@
                             </div>
                         </div>
                         <div id="totalBox">
-                            <div><p>Subtotal</p><span class='totalCheckout' id="subtotal">$0</span></div>
-                            <div><p>Taxes</p><span class='totalCheckout' id="taxes">$0</span></div>
-                            <div><p>tip</p><span class='totalCheckout' id="tip">$0</span></div>
-                            <div><p>Total</p><span class='totalCheckout' id="total">$0</span></div>
+                            <div><p>Subtotal</p><span>$<span class='totalCheckout' id="subtotal">0</span></span></div>
+                            <div><p>Taxes</p><span>$<span class='totalCheckout' id="taxes">0</span></span></div>
+                            <div><p>Points</p><span>- <span class='totalCheckout' id="points">0</span></span></div>
+                            <div><p>Discount</p><span>- $<span class='totalCheckout' id="discount">0</span></span></div>
+                            <div><p>Total</p><span>$<span class='totalCheckout' id="total">0</span></span></div>
                         
                         </div>
                     </article>
+                    <article>
+                        <a href='./payment.html' class='bg-yellow text-brown drop-shadow font-bold text-lg p-3 hover:bg-sand'>Proceed to Payment</a>
+                    </article>
                 </div>
+
         </div>
     </main>
     <footer>

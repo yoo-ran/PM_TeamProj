@@ -21,8 +21,7 @@ const checkout = () => {
         const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
         const totalLocalVal = Object.values(totalLocal)
         for (let i = 0; i < totalLocalVal.length; i++) {
-            totalCheckout[i].innerHTML = `$${totalLocalVal[i].toFixed(2)}`
-            
+            totalCheckout[i].innerHTML = `${totalLocalVal[i].toFixed(2)}`
         }
 
         // Loop through the menu items and create HTML elements
@@ -95,6 +94,7 @@ function updateCartBadge() {
 let totalObj = {
     subtotal:0,
     tax:0,
+    points:0,
     discount:0,
     total:0
 }
@@ -246,22 +246,27 @@ function updateItemSize(itemId, size) {
 // Function to redeem points
 function redeemPoints() {
     let points = parseInt(document.getElementById('points').textContent);
+    totalObj.points = points
     let redeemBtn = document.getElementById('redeemBtn');
 
     if (points >= 200 && !redeemBtn.classList.contains('redeemed')) {
-        let discount = 5.00;
-        document.querySelector('.total .discount').textContent = `-$${discount.toFixed(2)}`;
+        let discount = points / 40;
+        totalObj.discount = discount;
+        document.querySelector('.total .discount').textContent = `-$${totalObj.discount.toFixed(2)}`;
         
-        let subtotal = parseFloat(document.querySelector('.total .subtotal').textContent.replace('$', ''));
-        let tax = subtotal * 0.1;
-        let total = subtotal + tax - discount;
+        totalObj.subtotal = parseFloat(document.querySelector('.total .subtotal').textContent.replace('$', ''));
+        totalObj.tax = totalObj.subtotal * 0.1;
+        totalObj.total = totalObj.subtotal + totalObj.tax - totalObj.discount;
+        totalObj.points = points - (discount*40)
 
-        document.querySelector('.total .total').textContent = `$${total.toFixed(2)}`;
+        document.querySelector('.total .total').textContent = `$${totalObj.total.toFixed(2)}`;
         
         // Set points to zero and show close button
         document.getElementById('points').textContent = '0';
         redeemBtn.classList.add('redeemed');
         document.querySelector('#redeemBtn .close-btn').style.display = 'block';
+
+        localStorage.setItem("totalLocal", JSON.stringify(totalObj))
     } else {
         cancelRedeem();
     }
@@ -274,16 +279,20 @@ function cancelRedeem(event) {
     }
     document.querySelector('.total .discount').textContent = `-$0.00`;
     
-    let subtotal = parseFloat(document.querySelector('.total .subtotal').textContent.replace('$', ''));
-    let tax = subtotal * 0.1;
-    let total = subtotal + tax;
+    totalObj.subtotal = parseFloat(document.querySelector('.total .subtotal').textContent.replace('$', ''));
+    totalObj.tax = totalObj.subtotal * 0.1;
+    totalObj.total = totalObj.subtotal + totalObj.tax;
 
-    document.querySelector('.total .total').textContent = `$${total.toFixed(2)}`;
+    console.log(totalObj);
+
+    document.querySelector('.total .total').textContent = `$${totalObj.total.toFixed(2)}`;
     
     // Re-enable the redeem button and hide close button
     document.getElementById('points').textContent = '200';
     document.getElementById('redeemBtn').classList.remove('redeemed');
     document.querySelector('#redeemBtn .close-btn').style.display = 'none';
+
+
 }
 
 // Initialize cart badge on page load
@@ -293,3 +302,41 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCartItems();
     }
 });
+
+
+const dropdownMenu = document.querySelector("#dropdown");
+const menuButton = document.getElementById('menu-button');
+
+menuButton.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('opacity-100');
+  dropdownMenu.classList.toggle('scale-100');
+});
+
+const confirmModal = document.querySelector("#confirmModal")
+let isOpen = confirmModal.dataset.open
+const modalOpen = () => {
+console.log(Boolean(isOpen));
+  if(Boolean(isOpen)){
+    confirmModal.classList.remove("hidden")
+    isOpen= "false";
+  }else{
+    confirmModal.classList.add("hidden")
+    isOpen = "true";
+  }
+}
+
+
+
+const modalClose = (btn) => {
+    confirmModal.classList.add("hidden")
+
+    if(btn=="accept"){
+        const userSession = JSON.parse(sessionStorage.getItem("user"))
+        const totalLocal = JSON.parse(localStorage.getItem("totalLocal"))
+
+        userSession.reward = totalLocal.points
+        sessionStorage.setItem("user", JSON.stringify(userSession))
+        localStorage.removeItem("cart")
+        updateCartBadge();
+    }
+}
