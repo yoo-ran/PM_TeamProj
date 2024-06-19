@@ -24,7 +24,7 @@
         brown: "#886E3D",
       },
       margin: {
-        '-29': '-29rem',
+        '-46': '-46rem',
       },
     },
   },
@@ -49,12 +49,12 @@
         </ul>
     </nav>
 </header>
-    <main>
-        <article class='bg-whiteBlue w-[40rem] p-10 flex flex-col gap-y-4'>
-            <h3 class="text-brown font-bold mb-6 text-2xl">Payment Details</h3>
+    <main class=" w-full">
+        <article class='bg-whiteBlue w-2/5 p-10 flex flex-col gap-y-4'>
+            <h3 class="text-brown font-bold mb-6 text-6xl">Payment Details</h3>
             <div class="inline-block text-left flex flex-col gap-y-4">
                 <div>
-                    <button type="button" class="inline-flex w-10/12 justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="" aria-expanded="true" aria-haspopup="true">
+                    <button type="button" class="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-2xl  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="" aria-expanded="true" aria-haspopup="true">
                     Google Pay
                     <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -62,7 +62,7 @@
                     </button>
                 </div>
                 <div>
-                    <button type="button" class="inline-flex w-10/12 justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="" aria-expanded="true" aria-haspopup="true">
+                    <button type="button" class="inline-flex w-full  justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-2xl  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="" aria-expanded="true" aria-haspopup="true">
                     Apple Pay
                     <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -70,7 +70,7 @@
                     </button>
                 </div>
                 <div class="relative">
-                    <button type="button" class="inline-flex w-10/12 justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                    <button type="button" class="inline-flex w-full  justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-2xl  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
                     Credit or Debit
                     <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -85,8 +85,8 @@
                 </div>
 
             </div>
-            <p>Your Credit cards are secured with SSL encryption on our website</p>
-            <p>By providing your credit card information, you allow Coastal Cove Cafe to charge your card for future payments in accordance with thier terms.</p>
+            <p class="text-2xl">Your Credit cards are secured with SSL encryption on our website</p>
+            <p class="text-2xl">By providing your credit card information, you allow Coastal Cove Cafe to charge your card for future payments in accordance with thier terms.</p>
             <div class="inline-flex items-center">
                 <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="check">
                     <input type="checkbox"
@@ -102,11 +102,11 @@
                     </svg>
                     </span>
                 </label>
-                <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="check">
+                <label class="mt-px font-light text-gray-700 text-2xl cursor-pointer select-none" htmlFor="check">
                     Save this card for future payment
                 </label>
             </div> 
-            <button class='bg-yellow block text-brown drop-shadow font-bold text-lg p-3 hover:bg-sand' onclick='modalOpen()'>Confirm Order</button>
+            <button class='bg-yellow block text-brown drop-shadow font-bold text-2xl p-3 hover:bg-sand' onclick='modalOpen()'>Confirm Order</button>
         </article>
 
         <!-- Confirmation -->
@@ -118,7 +118,7 @@
               </div>
               <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
               <div
-                    class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:-mt-29 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                    class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:-mt-46 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                   <div class="sm:flex sm:items-start">
                       <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left flex flex-col items-center gap-y-4">
                           <div
@@ -142,7 +142,7 @@
                       <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                           <button 
                               onclick='modalClose("accept")'
-                              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-blue text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-blue text-base leading-6 font-medium text-white shadow-sm hover:bg-darkBlue focus:outline-none focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                               Accept
                             </button>
                       </span>
