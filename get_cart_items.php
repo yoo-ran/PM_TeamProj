@@ -38,6 +38,8 @@ try {
                 } else if ($cart_item['size'] === 'L') {
                     $row['price'] += 1.5;
                 }
+                // Format the price to two decimal places
+                $row['price'] = number_format($row['price'], 2, '.', '');
                 $items[] = $row;
             }
         }

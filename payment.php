@@ -9,23 +9,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            darkBlue:"#63888B",
-            blue:"#85ACAF",
-            lightBlue: "#AEC7C4",
-            whiteBlue:"#F1EBE6",
-            sand: "#E5D3BC",
-            yellow: "#D9C5A0",
-            white:"#f5f5f5",
-            gray:"#999",
-            pink:"#db5252",
-            brown: "#886E3D",
-          }
-        }
-      }
-    }
+  theme: {
+    extend: {
+      colors: {
+        darkBlue: "#63888B",
+        blue: "#85ACAF",
+        lightBlue: "#AEC7C4",
+        whiteBlue: "#F1EBE6",
+        sand: "#E5D3BC",
+        yellow: "#D9C5A0",
+        white: "#f5f5f5",
+        gray: "#999",
+        pink: "#db5252",
+        brown: "#886E3D",
+      },
+      margin: {
+        '-29': '-29rem',
+      },
+    },
+  },
+};
+
   </script>
     <link rel="stylesheet" href="./styles/global.css">
     <title>Payment</title>
@@ -114,12 +118,12 @@
               </div>
               <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
               <div
-                  class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                    class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:-mt-29 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                   <div class="sm:flex sm:items-start">
                       <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left flex flex-col items-center gap-y-4">
                           <div
-                              class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10 md:w-16 md:h-16 ">
-                              <svg class="h-6 w-6 text-green-600" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                              class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue sm:mx-0 sm:h-10 sm:w-10 md:w-16 md:h-16 ">
+                              <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                               </svg>
                           </div>
@@ -138,7 +142,7 @@
                       <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                           <button 
                               onclick='modalClose("accept")'
-                              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-blue text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                               Accept
                             </button>
                       </span>

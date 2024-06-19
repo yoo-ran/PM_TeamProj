@@ -81,6 +81,12 @@ img {
     object-fit: cover;
 }
 
+td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 input {
     padding: 0.2em;
     background-color: transparent;
@@ -134,6 +140,7 @@ input {
 .recommended button, .total >button {
     background-color: var(--yellow);
     border: none;
+    border-radius: 5px;
     padding: 1em;
     font-size: 1.4em;
     font-weight: bold;
@@ -196,13 +203,14 @@ input {
     background-color: #d2b48c;
     color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
     display: block;
     margin: 10px 0;
     position: relative;
+    padding: 1em;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 #redeemBtn .close-btn {
@@ -219,7 +227,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 1.4em;
     display: none; /* Initially hidden */
     line-height: 1; /* Adjust to center the "x" */
 }
@@ -235,13 +243,18 @@ input {
 }
 
 #checkBtn {
-    background-color: #007bff;
+    background-color: var(--dark-blue);
     color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    padding: 1em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#account_points {
+    padding-bottom: 1em;
 }
 
 #points {
@@ -263,7 +276,7 @@ input {
     row-gap: 1vh;
     background-color: var(--white);
     padding: 2em;
-    width: 80%;
+    width: 40%;
     position: absolute;
     top: 20%;
     display: none;
@@ -271,29 +284,25 @@ input {
 
 .checkout section {
     display: flex;
+    flex-direction: column; /* Change to column to stack vertically */
+    background-color: var(--sand)
+    /*row-gap: 2em;  Adjust gap between top and bottom sections */
 }
 
-.left {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2em;
-    width: 50%;
+.left, .right {
+    width: 100%; /* Make both left and right take full width */
+    padding:3rem 10rem;
     background-color: var(--sand);
-    padding: 1rem;
+
 }
 
-.right {
-    width: 45%;
-    display: flex;
-    background-color: var(--sand);
-    padding: 1rem;
-}
+
 
 .checkout .total {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 30%;
     row-gap: 2em;
 }
 
@@ -305,6 +314,7 @@ input {
     font-size: 40px;
     color: var(--brown);
     font-weight: bold;
+    padding-bottom: 10px;
 }
 
 .checkout h3 {
@@ -312,17 +322,12 @@ input {
     font-weight: bold;
 }
 
-.checkout section {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 1em;
-}
-
 #itemContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 2em; /* Adjust the gap between items */
 }
 
 .item {
@@ -347,7 +352,7 @@ input {
     font-size: 1.5rem;
 }
 
-#tipBtnBox {
+/* #tipBtnBox {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,7 +366,15 @@ input {
     border: none;
     font-size: 1.5rem;
     color: var(--brown);
-}
+} */
+
+/* Solid border */
+hr.solid {
+    border-top: 3px solid #ffffff;
+    opacity: 80%;
+    width: 80%;
+    margin: 10px auto;
+  }
 
 #totalBox > div {
     display: flex;
