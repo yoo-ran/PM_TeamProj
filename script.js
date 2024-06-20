@@ -262,6 +262,7 @@ function redeemPoints() {
         
         // Set points to zero and show close button
         document.getElementById('points').textContent = '0';
+        sessionStorage.setItem('points', '0');
         redeemBtn.classList.add('redeemed');
         document.querySelector('#redeemBtn .close-btn').style.display = 'block';
 
@@ -288,6 +289,7 @@ function cancelRedeem(event) {
     
     // Re-enable the redeem button and hide close button
     document.getElementById('points').textContent = '200';
+    sessionStorage.setItem('points', '200');
     document.getElementById('redeemBtn').classList.remove('redeemed');
     document.querySelector('#redeemBtn .close-btn').style.display = 'none';
 
@@ -299,6 +301,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartBadge();
     if (document.querySelector('.cart')) {
         loadCartItems();
+    }
+    const points = sessionStorage.getItem('points');
+    if (points !== null) {
+        document.getElementById('points').textContent = points;
     }
 });
 
@@ -325,15 +331,11 @@ console.log(Boolean(isOpen));
   }
 }
 
-
-
 const modalClose = (btn) => {
     confirmModal.classList.add("hidden")
 
     if(btn=="accept"){
-   
-
-                // Convert userData object to JSON string
+        // Convert userData object to JSON string
         const userDataJSON = sessionStorage.getItem("user")
         console.log(userDataJSON);
         // Send data to PHP script via POST request
@@ -347,6 +349,8 @@ const modalClose = (btn) => {
         .then(response => response.json())
         .then(result => {
             console.log('Success:', result);
+            // Navigate to the home page
+            window.location.href = 'index.html';
         })
         .catch(error => {
             console.error('Error:', error);
@@ -361,4 +365,3 @@ const modalClose = (btn) => {
         updateCartBadge();
     }
 }
-
