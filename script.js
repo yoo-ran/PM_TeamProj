@@ -1,11 +1,13 @@
-
+const closeCheckout = () => {
+    document.querySelector(".checkout").style.display = "none";
+    document.querySelector(".bg").style.display = "none";
+}
 
 const checkout = () => {
     document.querySelector(".checkout").style.display = "block";
     window.scrollTo(0, 0);
     document.querySelector(".bg").style.height = `${document.documentElement.scrollHeight}px`;
-
-   
+    document.querySelector(".bg").style.display = "block";
 
     const cartLocal = localStorage.getItem('cart');
     if (cartLocal) {
@@ -39,9 +41,6 @@ const checkout = () => {
                         <p id='itemSize'>Size: ${item.size}</p>
                         <p id='itemSize'>Quantity: ${item.quantity}</p>
                     </div>
-                </div>
-                <div>
-                    <p>*redeem</p>
                 </div>
             </div>`;
             dataContainer.appendChild(itemDiv);
@@ -362,3 +361,4 @@ const modalClose = (btn) => {
         updateCartBadge();
     }
 }
+

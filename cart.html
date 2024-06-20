@@ -120,9 +120,10 @@
         </section>
 
         <div class='bg' onclick='disappear()'></div>
-        <div class='checkout hidden'>
-            <h2>Checkout Details</h2>
-            <section>
+<div class='checkout hidden'>
+    <button class="checkout-close-button" onclick="closeCheckout()">×</button>
+    <h2>Checkout Details</h2>
+    <section>
                 <div class='left'>
                     <article class='order'>
                         <div id="itemContainer">
@@ -131,23 +132,24 @@
                     </article>
                 </div>
                 <hr class="solid">
-
+        
                 <div class="right flex flex-col justify-between items-end gap-y-10" style="padding: 3rem 10rem;">
                     <article class='total'>
-                        
                         <div id="totalBox">
                             <div><p>Subtotal</p><span>$<span class='totalCheckout' id="subtotal">0</span></span></div>
                             <div><p>Taxes</p><span>$<span class='totalCheckout' id="taxes">0</span></span></div>
                             <div><p>Points</p><span>- <span class='totalCheckout' id="points">0</span></span></div>
                             <div><p>Discount</p><span>- $<span class='totalCheckout' id="discount">0</span></span></div>
                             <div><p>Total</p><span>$<span class='totalCheckout' id="total">0</span></span></div>
-                        
                         </div>
                     </article>
                     <article>
                         <a href='./payment.php' class='bg-darkBlue text-white drop-shadow font-bold text-lg p-3 hover:bg-sand rounded-custom'>Proceed To Payment</a>
                     </article>
                 </div>
+            </section>
+        </div>
+        
 
         </div>
     </main>

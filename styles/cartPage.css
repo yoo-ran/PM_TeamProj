@@ -289,6 +289,18 @@ input {
     /*row-gap: 2em;  Adjust gap between top and bottom sections */
 }
 
+.checkout-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    color: var(--dark-blue);
+}
+
+
 .left, .right {
     width: 100%; /* Make both left and right take full width */
     padding:3rem 10rem;

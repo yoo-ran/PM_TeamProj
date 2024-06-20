@@ -92,7 +92,7 @@ if (!isset($_SESSION['username'])) {
  
     <footer>
       <figure>
-        <!-- <img src="/images/Logo-01.png" alt="Footer Logo"> -->
+          <img src="./images/Logo-01.png" alt="Footer Logo">
         <figcaption>
           <i class="fa-brands fa-instagram"></i>
           <i class="fa-brands fa-square-facebook"></i>
@@ -141,39 +141,41 @@ if (!isset($_SESSION['username'])) {
         }
 
         window.addEventListener("load", (event) => {
-            let userSession = sessionStorage.getItem("user")
-            let totalSession = sessionStorage.getItem("user")
-            const mainContainer = document.querySelector("main")
-            userSession = JSON.parse(userSession)
+    let userSession = sessionStorage.getItem("user");
+    const mainContainer = document.querySelector("main");
+    userSession = JSON.parse(userSession);
 
-            if(userSession!=null){
-                mainContainer.innerHTML = `<main>
+    if (userSession != null) {
+        mainContainer.innerHTML = `
+        <main>
             <h2 class="form-signin-heading">Welcome, ${userSession.username}</h2>
             <div class="container">
-                <p>Points: <span>${userSession.reward}</span></p>
+                <p><span style="color: var(--dark-blue); font-size: 2em; font-weight: bold;">Points: ${userSession.reward}</span></p>
             </div>
-            <button onclick="logout()">Logout</button>
-            </main>`
-            }else{
-                mainContainer.innerHTML = `<main>
-                <h2 class="form-signin-heading">Sign In</h2>
-                <div class="container">
-                    <form class="form-signin" method="POST">
-                        <div class="input-group">
-                            <label for="username">User name: </label>
-                            <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="inputPassword">Password: </label>
-                            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        </div>
-                        <button class="btn btn-lg btn-info btn-block" type="submit">Login</button>
-                    </form>
-                </div>
-                <a class="register" href="register.php">No Account? Create One Here</a>
-            </main>`
-            }
-        });
+            <button class="btn btn-lg btn-info btn-block" onclick="logout()">Logout</button>
+        </main>`;
+    } else {
+        mainContainer.innerHTML = `
+        <main>
+            <h2 class="form-signin-heading">Sign In</h2>
+            <div class="container">
+                <form class="form-signin" method="POST">
+                    <div class="input-group">
+                        <label for="username">User name: </label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="inputPassword">Password: </label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button class="btn btn-lg btn-info btn-block" type="submit">Login</button>
+                </form>
+            </div>
+            <a class="register" href="register.php">No Account? Create One Here</a>
+        </main>`;
+    }
+});
+
 
     </script>
 </body>

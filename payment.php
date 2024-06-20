@@ -160,8 +160,8 @@
     </main>
     <footer>
         <figure>
-          <img src="/images/Logo-01.png" alt="Footer Logo">
-          <figcaption>
+        <img src="./images/Logo-01.png" alt="Footer Logo">
+        <figcaption>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-square-facebook"></i>
             <i class="fa-brands fa-youtube"></i>
