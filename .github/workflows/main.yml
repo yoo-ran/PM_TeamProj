@@ -1,34 +1,26 @@
-name: 🚀 Deploy website on push
+name: 🚀 Deploy website
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # Adjust the branch as needed
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
+      - name: 🚚 Checkout code
+        uses: actions/checkout@v2
 
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'  # Adjust to a compatible Node.js version
+      # Assuming PHP, HTML, CSS files are in the root directory
+      # Adjust path as per your project structure
 
-      - name: 🔨 Build Project
-        run: |
-          cd .
-          npm install
-          npm run build
-
-      - name: 📂 Sync files
+      - name: 📂 Sync files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.yoorankim.com
           username: ftp-portfolio@yoorankim.com
           password: ${{ secrets.FTP_DEPLOY }}
-          local-dir: dist/
-          server-dir: coastalcovecafe.yoorankim.com
+          local-dir: .  # Upload all files from the repository
+          server-dir: multistepform.yoorankim.com/
