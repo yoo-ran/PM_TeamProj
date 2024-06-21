@@ -248,7 +248,7 @@ function redeemPoints() {
     totalObj.points = points
     let redeemBtn = document.getElementById('redeemBtn');
 
-    if (points >= 200 && !redeemBtn.classList.contains('redeemed')) {
+    if (points >= 300 && !redeemBtn.classList.contains('redeemed')) {
         let discount = points / 40;
         totalObj.discount = discount;
         document.querySelector('.total .discount').textContent = `-$${totalObj.discount.toFixed(2)}`;
@@ -256,12 +256,15 @@ function redeemPoints() {
         totalObj.subtotal = parseFloat(document.querySelector('.total .subtotal').textContent.replace('$', ''));
         totalObj.tax = totalObj.subtotal * 0.1;
         totalObj.total = totalObj.subtotal + totalObj.tax - totalObj.discount;
+        if (totalObj.total < 0) totalObj.total = 0; // Ensure total doesn't go below zero
+
         totalObj.points = points - (discount*40)
 
         document.querySelector('.total .total').textContent = `$${totalObj.total.toFixed(2)}`;
         
         // Set points to zero and show close button
         document.getElementById('points').textContent = '0';
+        sessionStorage.setItem('points', '0'); // Update session storage for points
         redeemBtn.classList.add('redeemed');
         document.querySelector('#redeemBtn .close-btn').style.display = 'block';
 
@@ -287,11 +290,10 @@ function cancelRedeem(event) {
     document.querySelector('.total .total').textContent = `$${totalObj.total.toFixed(2)}`;
     
     // Re-enable the redeem button and hide close button
-    document.getElementById('points').textContent = '200';
+    document.getElementById('points').textContent = '300';
+    sessionStorage.setItem('points', '300'); // Update session storage for points
     document.getElementById('redeemBtn').classList.remove('redeemed');
     document.querySelector('#redeemBtn .close-btn').style.display = 'none';
-
-
 }
 
 // Initialize cart badge on page load
@@ -325,15 +327,11 @@ console.log(Boolean(isOpen));
   }
 }
 
-
-
 const modalClose = (btn) => {
     confirmModal.classList.add("hidden")
 
     if(btn=="accept"){
-   
-
-                // Convert userData object to JSON string
+        // Convert userData object to JSON string
         const userDataJSON = sessionStorage.getItem("user")
         console.log(userDataJSON);
         // Send data to PHP script via POST request
@@ -347,6 +345,8 @@ const modalClose = (btn) => {
         .then(response => response.json())
         .then(result => {
             console.log('Success:', result);
+            // Navigate to the home page
+            window.location.href = 'index.html';
         })
         .catch(error => {
             console.error('Error:', error);
@@ -361,4 +361,3 @@ const modalClose = (btn) => {
         updateCartBadge();
     }
 }
-

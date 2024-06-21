@@ -17,9 +17,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($count == 1) {
         $user = mysqli_fetch_assoc($result);  // Fetch the user data
 
-        // Check if the user has reward points, if not, initialize them with 200 points
+        // Check if the user has reward points, if not, initialize them with 300 points
         if ($user['reward'] == 0) {
-            $initial_points = 200;
+            $initial_points = 300;
             $update_query = "UPDATE `users` SET reward='$initial_points' WHERE id='{$user['id']}'";
             mysqli_query($connection, $update_query) or die(mysqli_error($connection));
             $user['reward'] = $initial_points;
