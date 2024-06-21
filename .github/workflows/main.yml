@@ -22,5 +22,5 @@ jobs:
           server: ftp.yoorankim.com
           username: ftp-portfolio@yoorankim.com
           password: ${{ secrets.FTP_DEPLOY }}
-          local-dir: .  
+          local-dir: ./
           server-dir: coastalcovecafe.yoorankim.com/

@@ -302,6 +302,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.cart')) {
         loadCartItems();
     }
+    const points = sessionStorage.getItem('points');
+    if (points !== null) {
+        document.getElementById('points').textContent = points;
+    }
 });
 
 
